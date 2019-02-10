@@ -1,0 +1,34 @@
+﻿@page "/"
+@using TestRazorComponents.App.Services
+@inject ShibaService ShibaService
+
+<h1>Shiba</h1>
+
+<button class="btn btn-primary" onclick="@GetShibas">Thank you, next!</button>
+
+@if (shibas == null)
+{
+<p><em>Loading...</em></p>
+}
+else
+{
+
+    @foreach (var shiba in shibas)
+    {
+        <p><img width="1000" src="@shiba.Url" /></p>
+    }
+}
+
+@functions {
+    List<Shiba> shibas;
+
+    protected override async Task OnInitAsync()
+    {
+        await GetShibas();
+    }
+
+    protected async Task GetShibas()
+    {
+        shibas = await ShibaService.GetShibas();
+    }
+}
