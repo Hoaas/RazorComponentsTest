@@ -4,8 +4,8 @@ EXPOSE 80
 
 FROM microsoft/dotnet:3.0-sdk-stretch AS build
 WORKDIR /src
-COPY ["TestRazorComponents/TestRazorComponents.Server/TestRazorComponents.Server.csproj", "TestRazorComponents/TestRazorComponents.Server/"]
-COPY ["TestRazorComponents/TestRazorComponents.App/TestRazorComponents.App.csproj", "TestRazorComponents/TestRazorComponents.App/"]
+COPY ["RazorComponentsTest/TestRazorComponents/TestRazorComponents.Server/TestRazorComponents.Server.csproj", "TestRazorComponents/TestRazorComponents.Server/"]
+COPY ["RazorComponentsTest/TestRazorComponents/TestRazorComponents.App/TestRazorComponents.App.csproj", "TestRazorComponents/TestRazorComponents.App/"]
 RUN dotnet restore "TestRazorComponents/TestRazorComponents.Server/TestRazorComponents.Server.csproj"
 COPY . .
 WORKDIR "/src/TestRazorComponents/TestRazorComponents.Server"
