@@ -21,8 +21,8 @@ namespace TestRazorComponents.Server
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseStaticFiles("/shiba");
             app.UsePathBase("/shiba");
+            app.UseStaticFiles("/shiba");
             app.UseRazorComponents<App.Startup>();
         }
     }
