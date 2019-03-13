@@ -1,4 +1,4 @@
-﻿namespace TestRazorComponents.App.Services
+﻿namespace ShibaPower.Services
 {
     public class Shiba
     {

@@ -3,7 +3,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace TestRazorComponents.App.Services
+namespace ShibaPower.Services
 {
     public class ShibaService
     {
