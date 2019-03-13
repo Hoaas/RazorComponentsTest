@@ -6,7 +6,7 @@ EXPOSE 443
 FROM microsoft/dotnet:3.0-sdk-stretch AS build
 WORKDIR /src
 COPY ["ShibaPower.csproj", ""]
-RUN dotnet restore "/ShibaPower.csproj"
+RUN dotnet restore "ShibaPower.csproj"
 COPY . .
 WORKDIR "/src/"
 RUN dotnet build "ShibaPower.csproj" -c Release -o /app
