@@ -1,9 +1,9 @@
-FROM microsoft/dotnet:3.0-0-preview4-stretch-slim AS base
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.0 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM microsoft/dotnet:3.0-0-preview4-stretch-slim AS build
+FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS build
 WORKDIR /src
 COPY ["ShibaPower.csproj", ""]
 RUN dotnet restore "ShibaPower.csproj"
